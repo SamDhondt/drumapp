@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { DrumDataService } from '../drum/drum-data.service';
+import { basehttpInterceptorProviders } from '../http-interceptors';
 
 const routes = [
   { path: 'login', component: LoginComponent },
