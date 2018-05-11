@@ -1,0 +1,5 @@
+p {padding-left: 2em;}
+a {color: black;}
+a:hover {
+    text-decoration: none;
+}

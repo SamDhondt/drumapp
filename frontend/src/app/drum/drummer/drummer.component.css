@@ -1,0 +1,9 @@
+.metronome {
+    border: 1px solid gainsboro;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+span {
+    color: red;
+}

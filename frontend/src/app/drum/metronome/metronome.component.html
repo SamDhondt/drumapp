@@ -1,0 +1,50 @@
+<form class="form form-inline" [formGroup]="adjustMetronome" (ngSubmit)="onSubmit(metronomeBtn)">
+  <div class="form-group">
+    <label for="tempo_id">{{adjustMetronome.value.tempo}}bpm </label>
+    <input type="range" min="20" max="240" id="tempo" formControlName="tempo" name="tempo_id" class="form-control">
+  </div>
+  <div>
+      <button *ngIf="!isPlaying()" type="submit" class="btn btn-dark">
+        <span class="fas fa-play"></span>
+      </button>
+      <button *ngIf="isPlaying()" class="btn btn-dark" type="button" (click)="stopMetronome()">
+        <span class="fas fa-stop"></span>
+      </button>
+    </div>
+  <div class="form-group">
+    <label class="hidden-xs" for="type_id">Sound type: </label>
+    <select id="type" formControlName="type" name="type_id" class="form-control">
+      <option *ngFor="let t of soundTypes" [value]="t">{{t}}</option>
+    </select>
+  </div>
+  <!-- <div class="form-group">
+    <label for="tracking_id">Track:
+      <input type="checkbox" formControlName="tracking" name="tracking_id">
+    </label>
+  </div> -->
+
+</form>
+
+<!-- {{adjustMetronome.value | json}} -->
+
+<!-- <div class="form">
+  <div class="form-group">
+    <label>{{metronome.tempo}}bpm</label>
+    <br>
+    <input class="form-control" type="range" (mousemove)="tempo$.next($event.target.value)" value="90" min="20" max="240" step="1">
+  </div>
+ <div class="form-group">
+    <label></label>
+    <select class="form-control" (change)="type$.next($event.target.value)">
+      <option>choose a sound type</option>
+      <option *ngFor="let t of metronome.types">{{t}}</option>
+    </select>
+  </div>
+  <div class="row">
+    <div class="col-lg-3" *ngFor="let t of metronome.types">
+      <input type="button" class="btn btn-outline-secondary" id="{{t}}" value="{{t}}" (click)="changeType(t)">
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-dark" (click)="play()"><div class="fas fa-play"></div></button>
+<button type="button" class="btn btn-dark" (click)="stop()"><div class="fas fa-stop"></div></button> -->

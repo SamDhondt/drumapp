@@ -1,0 +1,23 @@
+nav {
+    background-color: darkslategrey;
+    
+}
+
+nav a {
+    color: seashell;
+    text-decoration: underline;
+}
+
+nav span {
+    color: seashell;
+}
+
+h1 {
+    color: seashell;
+    font-size: 16pt;
+    font-weight: normal;
+}
+
+h1 a {
+    text-decoration: none;
+}

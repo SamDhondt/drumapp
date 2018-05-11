@@ -1,0 +1,35 @@
+<div class="col-lg-3">
+  <div *ngIf='errorMsg' class="alert alert-danger">{{errorMsg}}</div>
+<form [formGroup]='user' (ngSubmit)='onSubmit()' class="form">
+  <div class="form-group">
+    <label for="username">username:</label>
+    <input class="form-control" type="text" id="username" formControlName='username'>
+    <div class='alert alert-danger' *ngIf='user.get("username").errors?.required && user.get("username").touched'>
+      a username is required
+    </div>
+    <div class='text-danger' *ngIf='user.get("username").errors?.minlength && user.get("username").touched'>
+      the username should be at least {{user.get("username").errors?.minlength.requiredLength }} letters
+    </div>
+    <div class='text-danger' *ngIf='user.get("username").errors?.userAlreadyExists && user.get("username").touched'>
+      a user with that name already exists
+    </div>
+  </div>
+  <div formGroupName='passwordGroup'>
+    <div class="form-group">
+      <label for="password">password:</label>
+      <input class="form-control" type="password" id="password" formControlName='password'>
+      <div class='text-danger' *ngIf=' passwordControl.errors?.passwordTooShort && passwordControl.touched'>
+        Password needs to be atleast 12 characters
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmpassword">confirm password:</label>
+      <input class="form-control" type="password" id="confirmpassword" formControlName='confirmPassword'>
+    </div>
+    <div class='text-danger' *ngIf=' user.get("passwordGroup").errors?.passwordsDiffer && user.get("passwordGroup").get("confirmPassword").touched  && user.get("passwordGroup").get("password").touched'>
+      Passwords don't match
+    </div>
+  </div>
+  <button type='submit' [disabled]='!user.valid' class="btn btn-success">Register</button>
+</form>
+</div>

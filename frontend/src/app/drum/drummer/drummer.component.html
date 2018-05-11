@@ -1,0 +1,40 @@
+<div class="row">
+
+  <div class="col-lg-9 col-md-9 col-sm-12">
+    <h3>Your progress</h3>   
+    <!-- if a rudiment is selected -->
+    <div *ngIf="drummer.currentRudiment; else noRudiment">
+      <h4>
+        <app-rudiment [rudiment]="drummer.currentRudiment"></app-rudiment>
+      </h4>
+      <!-- if practiceSessions.length > 0-->
+      <div *ngIf="drummer.practiceSessionsSelectedRudiment.length > 0; else noProgress">
+        <ul>
+          <li *ngFor="let ps of drummer.getPracticeSessionsByRudiment(drummer.currentRudiment)">
+            <app-practice-session [practiceSession]="ps"></app-practice-session>
+            <a href="#" (click)="removePracticeSession(ps)">
+              <span class="fas fa-remove"></span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" (click)="resetProgress(drummer.currentRudiment)">
+          Reset
+        </a>
+      </div>
+      <!-- end if -->
+      <!-- else -->
+      <ng-template #noProgress>
+        <p>
+          No progress tracked yet.
+        </p>
+      </ng-template>
+      <!-- end else -->
+    </div>
+    <!-- end if rudiment selected-->
+    <!--else-->
+    <ng-template #noRudiment>
+      <p>Select a rudiment from the list</p>
+    </ng-template>
+    <!--end else-->
+  </div>
+</div>

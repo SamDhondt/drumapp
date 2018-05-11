@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Rudiments</h3>
+    <input class="form-control" type="text" (keyup)="filterRudiment$.next($event.target.value)" placeholder="Filter the list...">
+    <ul class="list-group" #list>
+      <li class="list-group-item" *ngFor="let rud of rudiments | rudimentFilter: filterRudimentName" #listItem>
+          <a href="#" (click)="selectRudiment(rud)"><app-rudiment [rudiment]="rud">
+          </app-rudiment></a>
+      </li>
+    </ul>
+    <!-- <table class="table">
+      <tr *ngFor="let rud of rudiments | rudimentFilter: filterRudimentName">
+        <td>
+          <app-rudiment [rudiment]="rud"></app-rudiment>
+        </td>
+      </tr>
+    </table> -->
+  </div>
+</div>

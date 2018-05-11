@@ -1,0 +1,21 @@
+<div *ngIf="errorMsg" class="alert alert-danger">
+  {{errorMsg}}
+</div>
+<div class="row">
+  <div *ngIf="drummer" class="col-lg-12 col-md-12 col-sm-12 text-center center-block metronome">
+    <app-metronome (onMetronome)="trackProgress($event)" (metronomeChanged)="updateMetronome($event)" [metronome]="drummer.metronome">
+    </app-metronome>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-12 col-sm-12">
+    <app-rudiment-list (onSelectRudiment)="drummer.currentRudiment = $event" [rudiments]="rudiments">
+    </app-rudiment-list>
+  </div>
+  <div class="col-lg-6 col-md-12 col-sm-12">
+    <div *ngIf="drummer">
+      <app-drummer (metronomeChanged)="updateMetronome($event)" (onRemovePS)="removePracticeSession($event)" [drummer]="drummer">
+      </app-drummer>
+    </div>
+  </div>
+</div>

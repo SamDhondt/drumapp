@@ -1,0 +1,25 @@
+input[type="checkbox"] {
+    margin-left: 1em;
+}
+
+.btn-dark {
+    width: 5em;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+}
+
+form > div {
+    width: calc(100% / 3);  
+    display: inline-block;
+    vertical-align: top;
+    text-align:center;
+    padding: 0 5px;
+} 
+
+label {
+    display: inline-block;
+}
+
