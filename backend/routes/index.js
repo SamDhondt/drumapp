@@ -62,7 +62,7 @@ router.delete("/API/practiceSession/:practiceSession", auth, (req, res, next) =>
   })
 });
 
-router.get("/API/drummer/:name", (req, res, next) => {
+router.get("/API/drummer/:name", auth, (req, res, next) => {
   const query = Drummer.findOne({ name: req.params.name })
     .populate("metronome")
     .populate({ path: "practiceSessions", populate: { path: "rudiment" } });
