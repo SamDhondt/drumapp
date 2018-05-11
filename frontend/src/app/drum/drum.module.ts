@@ -11,7 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DrumDataService } from './drum-data.service';
 import { Routes, RouterModule } from '@angular/router';
 import { RudimentFilterPipe } from './rudiment-filter.pipe';
-import { DrummerDetailComponent } from './drummer-detail/drummer-detail.component';
 import { DrummerResolver } from './drummer-resolver';
 import { httpInterceptorProviders, basehttpInterceptorProviders } from '../http-interceptors';
 import { AuthenticationService } from '../user/authentication.service';
