@@ -1,4 +1,4 @@
-<form class="form form-inline" [formGroup]="adjustMetronome" (ngSubmit)="onSubmit(metronomeBtn)">
+<form class="form form-inline" [formGroup]="adjustMetronome" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="tempo_id">{{adjustMetronome.value.tempo}}bpm </label>
     <input type="range" min="20" max="240" id="tempo" formControlName="tempo" name="tempo_id" class="form-control">
