@@ -8,3 +8,7 @@ export const httpInterceptorProviders = [
     multi: true
   }
 ];
+
+export const basehttpInterceptorProviders = [ {
+provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true
+} ];

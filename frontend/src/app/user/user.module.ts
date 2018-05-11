@@ -31,7 +31,8 @@ const routes = [
   providers: [
     AuthenticationService,
     AuthGuardService,
-    DrumDataService
+    DrumDataService,
+basehttpInterceptorProviders,
   ]
 })
 export class UserModule { }

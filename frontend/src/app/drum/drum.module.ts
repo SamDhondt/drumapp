@@ -40,6 +40,7 @@ const appRoutes: Routes = [
     DrumDataService,
     DrummerResolver,
     httpInterceptorProviders,
+basehttpInterceptorProviders,
   ]
 })
 export class DrumModule { }
